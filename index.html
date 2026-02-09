@@ -79,29 +79,42 @@
       color: #ff4d6d;
       margin-top: 20px;
     }
+    .no {
+  position: absolute;
+}
   </style>
 </head>
 <body>
   <div class="card" id="card">
     <h1>Czy zostaniesz moją walentynką? 💕</h1>
     <button class="yes" onclick="yesClicked()">TAK 💖</button>
-    <button class="no" onclick="noClicked()">NIE 🙈</button>
+    <button class="no" id="noBtn">NIE 🙈</button>
     <div class="message" id="message"></div>
   </div>
 
-  <script>
+<script>
+  const noBtn = document.getElementById('noBtn');
+
+  noBtn.addEventListener('mouseenter', () => {
+    const padding = 20;
+    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+  });
+
   function yesClicked() {
     document.getElementById('message').innerText = `JUPI!!! 🎉💘
 
-NAPWNO, JESZCZE RAZ 😄
 KAPI CIĘ KOCHA <3!`;
+
     for (let i = 0; i < 80; i++) {
       createFirework();
     }
-  }
-
-  function noClicked() {
-    alert('Na pewno? 😢 Spróbuj jeszcze raz…');
   }
 
   function createFirework() {
