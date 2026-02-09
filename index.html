@@ -90,30 +90,32 @@
   </div>
 
   <script>
-    function yesClicked() {
-document.getElementById('message').innerText =
-  'JUPI!!! 🎉💘\n\nKAPI CIĘ KOCHA <3!';
+  function yesClicked() {
+    document.getElementById('message').innerText = `JUPI!!! 🎉💘
 
-      for (let i = 0; i < 80; i++) {
-        createFirework();
-      }
+NAPWNO, JESZCZE RAZ 😄
+KAPI CIĘ KOCHA <3!`;
+    for (let i = 0; i < 80; i++) {
+      createFirework();
     }
+  }
 
-    function noClicked() {
-      alert('Na pewno? 😢 Spróbuj jeszcze raz…');
-    }
+  function noClicked() {
+    alert('Na pewno? 😢 Spróbuj jeszcze raz…');
+  }
 
-    function createFirework() {
-      const fw = document.createElement('div');
-      fw.className = 'firework';
-      fw.style.left = Math.random() * window.innerWidth + 'px';
-      fw.style.top = Math.random() * window.innerHeight + 'px';
-      fw.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
-      fw.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
-      fw.style.setProperty('--y', (Math.random() - 0.5) * 200 + 'px');
-      document.body.appendChild(fw);
-      setTimeout(() => fw.remove(), 1000);
-    }
-  </script>
+  function createFirework() {
+    const fw = document.createElement('div');
+    fw.className = 'firework';
+    fw.style.left = Math.random() * window.innerWidth + 'px';
+    fw.style.top = Math.random() * window.innerHeight + 'px';
+    fw.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+    fw.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
+    fw.style.setProperty('--y', (Math.random() - 0.5) * 200 + 'px');
+    document.body.appendChild(fw);
+    setTimeout(() => fw.remove(), 1000);
+  }
+</script>
+
 </body>
 </html>
